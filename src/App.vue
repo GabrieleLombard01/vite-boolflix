@@ -65,4 +65,6 @@ export default {
     </section>
 </template>
 
-<style></style>
+<style lang="scss">
+@use '../src/assets/scss/style.scss'
+</style>
