@@ -7,6 +7,7 @@ export default {
     components: { SearchForm },
     data() {
         return {
+            store,
             titleFilter: ''
         }
     },
