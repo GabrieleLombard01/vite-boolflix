@@ -15,7 +15,14 @@ export default {
             this.titleFilter = term;
         },
         searchMovie() {
-            console.log(this.titleFilter)
+            if (!this.titleFilter) {
+                store.movies = [];
+                return;
+            };
+            axios.get(`${api.baseUri}/search/movie?api_key=${api.key}`)
+                .then(res => {
+                    store.movies = res.data.results;
+                })
         }
     }
 };
