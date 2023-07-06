@@ -15,7 +15,7 @@ export default {
 
 <template>
     <form @submit.prevent="$emit('form-submit')">
-        <input v-model.trim="searchTerm" :placeholder="placeholder || 'Cerca...'" type="text"
+        <input v-model.trim="searchTerm" type="text" :placeholder="placeholder || 'Cerca...'"
             @keyup="$emit('term-change', searchTerm)">
         <button type="submit">{{ submitLabel || 'VAI' }}</button>
     </form>

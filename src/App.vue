@@ -1,6 +1,6 @@
 <script>
-import { api } from '../src/data';
-import store from '../src/data/store';
+import { api } from './data';
+import store from './data/store';
 import SearchForm from './components/SearchForm.vue';
 export default {
     components: { SearchForm }
