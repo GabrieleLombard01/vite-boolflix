@@ -44,7 +44,7 @@ export default {
     <SearchForm @term-change="setTitleFilter" @form-submit="searchMovie" />
     <section id="movies">
         <h2>Movies</h2>
-        <ul v-for="movie in store.movies">
+        <ul v-for="movie in store.movies" :key="movie.id">
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
             <li>{{ movie.original_language }}</li>
