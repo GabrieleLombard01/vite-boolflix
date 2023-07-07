@@ -51,6 +51,7 @@ button {
 
 form input {
     height: 35px;
+    width: 70%;
     background-color: black;
     color: rgb(214, 213, 213);
     border: 1px solid red;
@@ -62,7 +63,6 @@ form input {
 .input_clicked {
     border-color: red !important;
     border: solid 2px;
-    width: 70%;
 }
 </style>
 
