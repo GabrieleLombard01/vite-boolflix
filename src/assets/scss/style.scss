@@ -3,10 +3,23 @@
     width: 50px;
     margin: 5px;
 }
+/*PSEUDO_CLASS:*/
+button .fa-magnifying-glass:hover{
+    color: red;
+}
+button .fa-magnifying-glass:active{
+    color: rgb(161, 9, 9);
+}
 
 /*GENERAL:*/
 body{
     background-color: black;
+}
+h1{
+    color: rgb(198, 12, 12);
+}
+h2{
+    color: grey;
 }
 ul li{
     list-style: none;

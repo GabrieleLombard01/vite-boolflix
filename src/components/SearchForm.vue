@@ -1,10 +1,13 @@
 <script>
 export default {
     data() {
+
         return {
             searchTerm: '',
-            sectionVisibilitySet: false
+            sectionVisibilitySet: false,
+            isClicked: false,
         };
+
     },
     props: {
         placeholder: String,
@@ -26,18 +29,14 @@ export default {
     <form @submit.prevent="$emit('form-submit')">
         <button type="submit" @click="setSectionVisibility">{{ submitLabel }}<i
                 class="fa-solid fa-magnifying-glass"></i></button>
-        <input class="ps-2" v-model.trim="searchTerm" type="text" :placeholder="placeholder || 'Cerca...'"
-            @keyup="$emit('term-change', searchTerm)">
+        <input :class="{ input_clicked: isClicked }" @click="isClicked = !isClicked" class="ps-2" v-model.trim="searchTerm"
+            type="text" :placeholder="placeholder || 'Cerca...'" @keyup="$emit('term-change', searchTerm)">
     </form>
 </template>
   
-<style scoped>
+<style >
 /*CSS reset*/
 /*Pseudo-classes*/
-form input:focus {
-    border: solid red 2px;
-    width: 70%;
-}
 
 /*Generics*/
 button {
@@ -54,12 +53,17 @@ form input {
     height: 35px;
     background-color: black;
     color: rgb(214, 213, 213);
-    border: solid red 1px;
+    border: 1px solid red;
     border-radius: 3px;
 }
 
 /*Utilties*/
 /*FORM:*/
+.input_clicked {
+    border-color: red !important;
+    border: solid 2px;
+    width: 70%;
+}
 </style>
-  
+
 

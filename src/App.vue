@@ -54,7 +54,7 @@ export default {
     <div class="container-xl bg-black text-white">
         <!-- HEADER -->
         <header class="d-flex align-items-center justify-content-between p-2 bg-black">
-            <h1 class="col-6 text-danger">BOOLFLIX</h1>
+            <h1 class="col-3">BOOLFLIX</h1>
             <SearchForm class="col-6 text-end" @term-change="setTitleFilter" @form-submit="searchProductions" />
         </header>
 
