@@ -10,9 +10,7 @@ export default {
     data() {
         return {
             store,
-            titleFilter: '',
-            showMovieSection: false,
-            showSeriesSection: false
+            titleFilter: ''
         };
     },
     computed: {
@@ -38,18 +36,14 @@ export default {
                 return;
             }
 
-            this.fetchApi('search/movie', 'movies', 'showMovieSection');
-            this.fetchApi('search/tv', 'series', 'showSeriesSection');
+            this.fetchApi('search/movie', 'movies');
+            this.fetchApi('search/tv', 'series');
         },
-        fetchApi(endpoint, target, section) {
-            if (this[section]) {
-                return; // Do nothing if the section is already visible
-            }
+        fetchApi(endpoint, target) {
 
             axios.get(`${api.baseUri}/${endpoint}`, this.axiosConfig)
                 .then(res => {
                     store[target] = res.data.results;
-                    this[section] = true;
                 });
         }
     }
@@ -66,7 +60,7 @@ export default {
 
         <!-- SEARCHED PRODUCTS -->
         <section id="movies">
-            <h2 :class="{ 'd-block': showMovieSection, 'd-none': !showMovieSection }">Film:</h2>
+            <h2>Film:</h2>
             <div class="row">
 
                 <productionCard class="card" v-for="movie in store.movies" :key="movie.id" :item="movie" />
@@ -74,7 +68,7 @@ export default {
         </section>
 
         <section id="series">
-            <h2 :class="{ 'd-block': showSeriesSection, 'd-none': !showSeriesSection }">Serie tv:</h2>
+            <h2>Serie tv:</h2>
             <div class="row">
                 <productionCard class="card" v-for="serie in store.series" :key="serie.id" :item="serie" />
 
@@ -100,5 +94,8 @@ section {
     margin: 10px;
 }
 </style>
+  
+  
+  
   
   
