@@ -81,14 +81,12 @@ export default {
 @use '../src/assets/scss/style.scss';
 
 section {
-    border: dashed white;
     max-width: 992px;
     margin: 0 auto;
     padding-left: 10px;
 }
 
 .card {
-    border: solid yellow 1px;
     width: 310px;
     padding: 5px;
     margin: 10px;
