@@ -1,4 +1,5 @@
 <script >
+import { pics } from '../data';
 export default {
     props: {
         item: Object
@@ -17,6 +18,10 @@ export default {
         flagSrc() {
             const url = new URL(`../assets/img/${this.item.original_language}.png`, import.meta.url);
             return url.href
+        },
+        posterPath() {
+            if (!this.item.poster_path) return pics.placeholder;
+            return pics.prefix + this.item.poster_path;
         }
     }
 };
@@ -27,10 +32,11 @@ export default {
         <li>{{ title }}</li>
         <li>{{ originalTitle }}</li>
         <li>
-            <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
+            <img class="flag_size" v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
             <span v-else>{{ item.original_language }}</span>
         </li>
         <li>{{ item.vote_average }}</li>
+        <li><img :src="posterPath" :alt="title"></li>
     </ul>
 </template>
 
