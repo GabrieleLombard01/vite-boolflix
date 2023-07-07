@@ -64,20 +64,41 @@ export default {
             <SearchForm class="col-6 text-end" @term-change="setTitleFilter" @form-submit="searchProductions" />
         </header>
 
+        <!-- SEARCHED PRODUCTS -->
         <section id="movies">
             <h2 :class="{ 'd-block': showMovieSection, 'd-none': !showMovieSection }">Film:</h2>
-            <productionCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
+            <div class="row">
+
+                <productionCard class="card" v-for="movie in store.movies" :key="movie.id" :item="movie" />
+            </div>
         </section>
 
         <section id="series">
             <h2 :class="{ 'd-block': showSeriesSection, 'd-none': !showSeriesSection }">Serie tv:</h2>
-            <productionCard v-for="serie in store.series" :key="serie.id" :item="serie" />
+            <div class="row">
+                <productionCard class="card" v-for="serie in store.series" :key="serie.id" :item="serie" />
+
+            </div>
         </section>
     </div>
 </template>
   
 <style lang="scss">
 @use '../src/assets/scss/style.scss';
+
+section {
+    border: dashed white;
+    max-width: 992px;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+.card {
+    border: solid yellow 1px;
+    width: 310px;
+    padding: 5px;
+    margin: 10px;
+}
 </style>
   
   
