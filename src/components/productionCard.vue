@@ -22,6 +22,9 @@ export default {
         posterPath() {
             if (!this.item.poster_path) return pics.placeholder;
             return pics.prefix + this.item.poster_path;
+        },
+        vote() {
+            return
         }
     }
 };
@@ -35,7 +38,9 @@ export default {
             <img class="flag_size" v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
             <span v-else>{{ item.original_language }}</span>
         </li>
-        <li>{{ item.vote_average }}</li>
+        <li>{{ vote }}
+            <i class="far fa-regular fa-star"></i>
+        </li>
         <li><img :src="posterPath" :alt="title"></li>
     </ul>
 </template>

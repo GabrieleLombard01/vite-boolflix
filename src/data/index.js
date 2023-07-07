@@ -5,6 +5,6 @@ export const api = {
 }
 
 export const pics = {
-    prefix: 'https://image.tmdb.org/t/p/w500',
+    prefix: 'https://image.tmdb.org/t/p/w300',
     placeholder: 'https://marcolanci.it/utils/poster-placeholder.png'
 }
