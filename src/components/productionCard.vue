@@ -24,7 +24,7 @@ export default {
             return pics.prefix + this.item.poster_path;
         },
         vote() {
-            return
+            return Math.ceil(this.item.vote_average / 2)
         }
     }
 };
@@ -38,8 +38,8 @@ export default {
             <img class="flag_size" v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
             <span v-else>{{ item.original_language }}</span>
         </li>
-        <li>{{ vote }}
-            <i class="far fa-regular fa-star"></i>
+        <li>
+            <i v-for="n in 5" :key="n" :class="n <= vote ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
         </li>
         <li><img :src="posterPath" :alt="title"></li>
     </ul>
