@@ -51,7 +51,11 @@ export default {
 </script>
 
 <template>
-    <SearchForm @term-change="setTitleFilter" @form-submit="searchProductions" />
+    <!--HEADER-->
+    <header class="d-flex align-items-center justify-content-between p-2 bg-black">
+        <h1 class="col-6 text-danger">BOOLFLIX</h1>
+        <SearchForm class="col-6 text-end" @term-change="setTitleFilter" @form-submit="searchProductions" />
+    </header>
 
     <section id="movies">
         <h2>Movies</h2>
