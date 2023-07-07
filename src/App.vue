@@ -61,7 +61,7 @@ export default {
         <!-- SEARCHED PRODUCTS -->
         <section id="movies">
             <h2>Film:</h2>
-            <div class="row">
+            <div class="row justify-content-center">
 
                 <productionCard class="card" v-for="movie in store.movies" :key="movie.id" :item="movie" />
             </div>
